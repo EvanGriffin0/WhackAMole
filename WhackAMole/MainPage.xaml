@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WhackAMole.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="5">
+            <Label x:Name="topscore_lbl" Text="Top Score : 0"
+               HorizontalOptions="CenterAndExpand" FontSize="20"
+               BackgroundColor="Blue"/>
+
+            <HorizontalStackLayout Margin="0,10,0,0" 
+                HorizontalOptions="CenterAndExpand">
+                <Label Text="Score : "/>
+                <Label x:Name="score_lbl" Text="0"/>
+                <Label Text="Timer : " Margin="15,0,0,0"/>
+                <Label x:Name="timer_lbl" Text="5"/>
+            </HorizontalStackLayout>
+            <Grid x:Name="GridMoles3" HeightRequest="300" WidthRequest="300"
+              HorizontalOptions="CenterAndExpand"
+              BackgroundColor="Blue" RowDefinitions="*,*,*"
+              ColumnDefinitions="*,*,*">
+                <Image x:Name="smileyimg" Source="smiley.png" HorizontalOptions="Center"
+                   VerticalOptions="Center" IsVisible="false">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ImageTapped"
+                                          NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+
+                </Image>
+
+
+            </Grid>
+            <Grid x:Name="GridMoles5" HeightRequest="300" WidthRequest="300"
+              HorizontalOptions="CenterAndExpand"
+              BackgroundColor="Red" RowDefinitions="*,*,*,*,*"
+              ColumnDefinitions="*,*,*,*,*" IsVisible="False">
+
+                <ImageButton Source="smiley.png" HorizontalOptions="Center"
+                   VerticalOptions="Center" Clicked="ImageTapped"/>
+
+            </Grid>
+            <Button x:Name="StartBtn" Text="Start" WidthRequest="150"
+                Clicked="StartBtn_Clicked"/>
+            <Button x:Name="SwitchBtn" Text="Switch Grid" WidthRequest="150"
+                Clicked="SwitchBtn_Clicked"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
